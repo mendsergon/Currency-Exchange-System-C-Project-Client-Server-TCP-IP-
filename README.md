@@ -56,18 +56,19 @@ This project is a **multi-client currency exchange system** written in C that im
 * Modular program design with clear separation between client and server logic
 * Input validation and user interface design for console applications
 * Signal handling for graceful application termination
-* Makefile creation and multi-file project compilation
+* **Automated builds using Makefile for compilation and project management**
 
 ---
 
 ### File Overview
 
-| File Name          | Description                                                                 |
-| ------------------ | --------------------------------------------------------------------------- |
-| **Bank.c**         | Main server application handling client connections and process management  |
-| **Client.c**       | Client application providing user interface and server communication        |
-| **Functions.c**    | Core business logic, database operations, and utility functions             |
-| **Functions.h**    | Data structure definitions and function prototypes for the entire system    |
+| File Name        | Description                                                                 |
+| ---------------- | --------------------------------------------------------------------------- |
+| **Bank.c**       | Main server application handling client connections and process management  |
+| **Client.c**     | Client application providing user interface and server communication        |
+| **Functions.c**  | Core business logic, database operations, and utility functions             |
+| **Functions.h**  | Data structure definitions and function prototypes for the entire system    |
+| **makefile.mak** | Makefile automating compilation, debugging, installation, and cleanup tasks |
 
 ---
 
@@ -84,7 +85,13 @@ This project is a **multi-client currency exchange system** written in C that im
 
 ### How to Compile and Run
 
-1. Compile the server and client applications:
+1. Compile the server and client applications using the **Makefile** (`makefile.mak`):
+
+   ```bash
+   make all
+   ```
+
+   Or compile manually:
 
    ```bash
    gcc -o server Bank.c Functions.c -lpthread
@@ -103,9 +110,9 @@ This project is a **multi-client currency exchange system** written in C that im
    ./client
    ```
 
-4. Follow the interactive menus to register, login, and perform currency operations
+4. Follow the interactive menus to register, login, and perform currency operations.
 
-5. Use "shutdown" command in server terminal for graceful termination
+5. Use the `shutdown` command in the server terminal for graceful termination.
 
 ---
 
@@ -115,3 +122,5 @@ This project is a **multi-client currency exchange system** written in C that im
 * **Compiler:** GCC with pthread support
 * **Network:** Localhost TCP/IP connectivity
 * **Permissions:** File read/write access for database persistence
+
+---
